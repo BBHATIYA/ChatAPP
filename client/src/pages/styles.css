@@ -1,0 +1,23 @@
+.wrapper {
+  display: flex;
+  margin: 10px;
+  justify-content: space-around;
+}
+#message {
+  width: 100%;
+  height: 30%;
+}
+
+button {
+  margin: 10px;
+  padding: 10px;
+}
+
+.userMainDiv {
+  border: 2px solid red;
+}
+
+.userDiv {
+  border: 2px solid black;
+  margin: 5px;
+}

@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import jwt from "jsonwebtoken";
 import axios from "axios";
+import "./styles.css";
 
-const url = `ws:localhost:9876/websocket`;
+const url = `ws:localhost:1337/websocket`;
 const server = new WebSocket(url);
 
 server.onopen = function() {
-  // server.send("Hello");
+  server.send("Hello");
 };
 
 //Websocket
@@ -54,24 +55,33 @@ const Chat = () => {
   return (
     <>
       <h1>Chat Page</h1>
-      <div>
-        {chatList.map((item, i) => {
-          return (
-            <div>
-              <p key={i}>{item._id}</p>
-              <p>{item.phonenumber}</p>
-              <input
-                type="text"
-                id="message"
-                onChange={(e) => setText(e.target.value)}
-              />
-              <button id="send" onClick={sendMessage}>
-                Send Message
-              </button>
-              <p></p>
-            </div>
-          );
-        })}
+      <div className="wrapper">
+        <div className="userMainDiv">
+          {chatList.map((item, i) => {
+            return (
+              <div className="userDiv">
+                <p key={i}>{item._id}</p>
+                <p>{item.phonenumber}</p>
+              </div>
+            );
+          })}
+        </div>
+        <div>
+          <input
+            type="text"
+            id="message"
+            onChange={(e) => setText(e.target.value)}
+          />
+          <button id="send" onClick={sendMessage}>
+            Send All Users
+          </button>
+          <button id="send" onClick={sendMessage}>
+            Send X Users
+          </button>
+          <button id="send" onClick={sendMessage}>
+            Send to Single User
+          </button>
+        </div>
       </div>
     </>
   );
