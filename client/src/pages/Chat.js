@@ -23,7 +23,7 @@ const Chat = () => {
 
   const allUsers = async () => {
     axios
-      .get("http://localhost:9876/api/user-list")
+      .get("http://localhost:1337/api/user-list")
       .then((response) => {
         const data = response.data;
 

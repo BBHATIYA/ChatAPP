@@ -68,7 +68,7 @@ app.get("/api/user-list", (req, res) => {
     });
 });
 
-const server = app.listen(9876, () => {
+const server = app.listen(1337, () => {
   console.log("Server running on 1337");
 });
 
